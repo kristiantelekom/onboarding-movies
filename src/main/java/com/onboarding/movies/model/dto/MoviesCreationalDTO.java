@@ -19,6 +19,8 @@ public class MoviesCreationalDTO {
     private List<RolesDTO> rolesDTOList;
     private String movieImage;
 
+    private String movieImageName;
+
     public String getName() {
         return name;
     }
@@ -105,5 +107,13 @@ public class MoviesCreationalDTO {
 
     public void setMovieImage(String movieImage) {
         this.movieImage = movieImage;
+    }
+
+    public String getMovieImageName() {
+        return movieImageName;
+    }
+
+    public void setMovieImageName(String movieImageName) {
+        this.movieImageName = movieImageName;
     }
 }

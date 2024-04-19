@@ -5,21 +5,21 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
 @Entity
-public class ActorReference {
+public class ActorsReference {
 
     @Id
     @Column(name = "actor_id")
     private Integer actorId;
-
     private String roleName;
 
-    public ActorReference() {
+    public ActorsReference() {
     }
 
-    public ActorReference(Integer actorId, String roleName) {
+    public ActorsReference(Integer actorId, String roleName) {
         this.actorId = actorId;
         this.roleName = roleName;
     }
+
 
     public Integer getActorId() {
         return actorId;

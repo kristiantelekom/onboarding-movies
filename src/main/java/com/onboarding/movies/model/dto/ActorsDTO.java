@@ -120,4 +120,23 @@ public class ActorsDTO {
     public void setActorsImageName(String actorsImageName) {
         this.actorsImageName = actorsImageName;
     }
+
+    @Override
+    public String toString() {
+        return "ActorsDTO{" +
+                "actorId=" + actorId +
+                ", fullName='" + fullName + '\'' +
+                ", href='" + href + '\'' +
+                ", gender='" + gender + '\'' +
+                ", jobTitle='" + jobTitle + '\'' +
+                ", dateOfBirth=" + dateOfBirth +
+                ", placeOfBirth='" + placeOfBirth + '\'' +
+                ", children='" + children + '\'' +
+                ", spouse='" + spouse + '\'' +
+                ", parents='" + parents + '\'' +
+                ", biography='" + biography + '\'' +
+                ", actorsImage='" + actorsImage + '\'' +
+                ", actorsImageName='" + actorsImageName + '\'' +
+                '}';
+    }
 }

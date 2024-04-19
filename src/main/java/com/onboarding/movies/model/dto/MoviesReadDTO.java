@@ -1,43 +1,37 @@
 package com.onboarding.movies.model.dto;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 import java.util.Date;
 import java.util.List;
 
-public class MoviesCreationalResponseDTO {
+public class MoviesReadDTO {
+
     private Integer movieId;
     private String name;
-    @JsonProperty("genre")
     private String genre;
 
     String href;
     private Date releaseDate;
-    private String comment;
-    private Double rating;
     private String language;
-    private String description;
     private String director;
+    private Integer year;
     private String runtime;
     private List<RolesResponseDTO> roles;
     private String movieImage;
     private String movieImageName;
 
-    public MoviesCreationalResponseDTO() {
+    public MoviesReadDTO() {
     }
 
-    public MoviesCreationalResponseDTO(Integer movieId, String name, String genre, String href, Date releaseDate, String comment, Double rating,
-                                       String language, String description, String director, String runtime, List<RolesResponseDTO> roles, String movieImage, String movieImageName) {
+    public MoviesReadDTO(Integer movieId, String name, String genre, String href, Date releaseDate, String language,
+                         String director, Integer year, String runtime, List<RolesResponseDTO> roles, String movieImage, String movieImageName) {
         this.movieId = movieId;
         this.name = name;
         this.genre = genre;
         this.href = href;
         this.releaseDate = releaseDate;
-        this.comment = comment;
-        this.rating = rating;
         this.language = language;
-        this.description = description;
         this.director = director;
+        this.year = year;
         this.runtime = runtime;
         this.roles = roles;
         this.movieImage = movieImage;
@@ -76,22 +70,6 @@ public class MoviesCreationalResponseDTO {
         this.releaseDate = releaseDate;
     }
 
-    public String getComment() {
-        return comment;
-    }
-
-    public void setComment(String comment) {
-        this.comment = comment;
-    }
-
-    public Double getRating() {
-        return rating;
-    }
-
-    public void setRating(Double rating) {
-        this.rating = rating;
-    }
-
     public String getLanguage() {
         return language;
     }
@@ -100,20 +78,20 @@ public class MoviesCreationalResponseDTO {
         this.language = language;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public String getDirector() {
         return director;
     }
 
     public void setDirector(String director) {
         this.director = director;
+    }
+
+    public Integer getYear() {
+        return year;
+    }
+
+    public void setYear(Integer year) {
+        this.year = year;
     }
 
     public String getRuntime() {

@@ -8,10 +8,11 @@ import java.util.Optional;
 public interface MoviesDAO {
 
     List<MoviesEntity> getMovies();
-    Optional<MoviesEntity> getMoviesById(Integer movieId);
-    MoviesEntity getMoviesByName(String movieName);
+    MoviesEntity getMoviesById(Integer movieId);
+    MoviesEntity getMoviesByGenre(String genreName);
     MoviesEntity createMovie(MoviesEntity movie);
     MoviesEntity updateMovie(Integer movieId, MoviesEntity movie);
+    List<MoviesEntity> getMoviesByGenreId(Integer genreId);
     void deleteMovie(Integer movieId);
 
 }

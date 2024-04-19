@@ -3,7 +3,6 @@ package com.onboarding.movies.model.entity;
 import jakarta.persistence.*;
 
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -15,6 +14,7 @@ public class MoviesEntity {
     @Id
     @Column(name = "movie_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Integer movieId;
     private String name;
     private Integer genre;
@@ -35,7 +35,6 @@ public class MoviesEntity {
     private Double rating;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "movie_id")
     private List<RolesEntity> roles;
 
 
@@ -63,6 +62,9 @@ public class MoviesEntity {
         return movieId;
     }
 
+    public void setMovieId(Integer movieId) {
+        this.movieId = movieId;
+    }
 
     public String getName() {
         return name;
@@ -168,11 +170,6 @@ public class MoviesEntity {
         this.rating = rating;
     }
 
-
-    public void setMovieId(Integer movieId) {
-        this.movieId = movieId;
-    }
-
     public List<RolesEntity> getRoles() {
         return roles;
     }
@@ -180,36 +177,4 @@ public class MoviesEntity {
     public void setRoles(List<RolesEntity> roles) {
         this.roles = roles;
     }
-
-    public void addRole(RolesEntity role) {
-        if (roles == null) {
-            roles = new ArrayList<>();
-        }
-        roles.add(role);
-        role.setMovieId(this); // Set the movie reference in the role
-    }
-
-    @Override
-    public String toString() {
-        return "MoviesEntity{" +
-                "movieId=" + movieId +
-                ", name='" + name + '\'' +
-                ", genre=" + genre +
-                ", releaseDate=" + releaseDate +
-                ", language='" + language + '\'' +
-                ", stars='" + stars + '\'' +
-                ", writers='" + writers + '\'' +
-                ", director='" + director + '\'' +
-                ", runtime='" + runtime + '\'' +
-                ", description='" + description + '\'' +
-                ", year=" + year +
-                ", movieImageName='" + movieImageName + '\'' +
-                ", comment='" + comment + '\'' +
-                ", rating=" + rating +
-                ", roles=" + roles +
-                '}';
-    }
-
-
-
 }
